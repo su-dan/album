@@ -1,0 +1,62 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #222;
+}
+#app {
+  width: 100%;
+  height: 100%;
+}
+img {
+  width: 240px;
+  height: 240px; 
+}
+
+/**stage start**/
+.stage {
+  position: relative;
+  width: 100%;
+  height: 680px;
+}
+/**sstage end**/
+
+/**img start**/
+.img-sec {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #ddd; 
+
+  @at-root {
+    .img-figure {
+      position: absolute;
+      width: 320px;
+      height: 360px;
+      margin: 0;
+      padding: 40px;
+      box-sizing: border-box;
+      background: #fff;
+    }
+    figcaption {
+      text-align: center;
+      .img-title {
+        margin: 20px 0 0 0;
+        font-size: 16px;
+        color: #a7a2a0;
+      }
+    }
+  }
+}
+/**img end**/
+
+/**controller start**/
+.controller-nav {
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  z-index: 101;
+  width: 100%;
+  text-align: center;
+}
+/**controller end**/
