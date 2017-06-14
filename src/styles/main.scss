@@ -27,7 +27,7 @@ img {
   height: 100%;
   overflow: hidden;
   background: #ddd; 
-
+  perspective: 1800px;
   @at-root {
     .img-figure {
       position: absolute;
@@ -37,6 +37,13 @@ img {
       padding: 40px;
       box-sizing: border-box;
       background: #fff;
+      cursor: pointer;
+      transform-origin: 0 50% 0;
+      transform-style: preserve-3d;/* 被转换元素的位置 3D的分别对应: x轴，y轴，z轴，默认是：50% 50% 0 */
+      transition: transform 0.6s ease-in-out, left 0.6s ease-in-out, top 0.6s ease-in-out;/* 子元素将保留其3D位置 */
+      &.is-reverse {
+        transform: translate(320px) rotateY(180deg);
+      }
     }
     figcaption {
       text-align: center;
@@ -44,6 +51,20 @@ img {
         margin: 20px 0 0 0;
         font-size: 16px;
         color: #a7a2a0;
+      }
+      .img-back {
+        position: absolute;
+        /* 相对于img-sec进行定位 */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 50px 40px;
+        overflow: auto;
+        color: #666;
+        background: #fff;
+        transform: rotateY(180deg) translateZ(1px);
       }
     }
   }
